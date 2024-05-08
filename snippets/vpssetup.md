@@ -1,5 +1,5 @@
 ---
-title: The Steps I Take to Setup a New VPS
+title: Setting Up a New VPS
 date: 2024-05-01
 ---
 ### First Things First
