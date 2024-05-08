@@ -1,4 +1,8 @@
-# USB-CDC-Gadget Orange Pi Zero +2 H3
+---
+title: Using an Orange Pi Zero +2 H3 as a Usb CDC Gadget
+date: 2023-11-28
+---
+
 with Armbian bullseye 5.15.93-sunxi
 
 In `/etc/modules` add:

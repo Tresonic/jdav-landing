@@ -1,5 +1,39 @@
-{% extends "index.html" %}
+{% extends "layout.html" %}
+
+{% block title %}{{post.title}}{% endblock %}
+
+{% block meta %}
+<meta property="og:title" content="{{post.title}} - Thea Flowers">
+<meta property="twitter:title" content="{{post.title}} - Thea Flowers">
+
+{% if post.description %}
+<meta property="og:description" content="{{post.description}}">
+<meta property="twitter:description" content="{{post.description}}">
+{% endif %}
+
+{% if post.preview_image %}
+<meta property="og:image" content="https://lubla.de/{{post.stem}}/{{post.preview_image}}">
+<meta property="twitter:image" content="https://lubla.de/{{post.stem}}/{{post.preview_image}}">
+{% endif %}
+
+{% if post.preview_image_alt %}
+<meta name="twitter:image:alt" content="{{post.preview_image_alt}}">
+{% endif %}
+
+<meta property="og:url" content="https://lubla.de/{{post.stem}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@">
+{% endblock %}
+
 {% block content %}
-{{ content }}
-<div style="height: 200px; width: 1px;"></div>
+<article>
+  <aside class="timestamp">
+    <time>Posted on {{post['date'].strftime('%B %e, %Y')}}</time>
+    · <a href="/">Home</a>
+  </aside>
+  <h1>{{post.title}}</h1>
+  <content>
+    {{content}}
+  </content>
+</article>
 {% endblock %}

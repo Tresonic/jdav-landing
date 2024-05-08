@@ -1,11 +1,16 @@
-# VPS Setup
-
+---
+title: The Steps I Take to Setup a New VPS
+date: 2024-05-01
+---
+### First Things First
 - update
 - change root password if not set already
 
-### Add user with sudo privileges
-```adduser vpsadmin```
-```usermod -aG sudo vpsadmin```
+### Add User with sudo Privileges
+```bash
+adduser vpsadmin
+usermod -aG sudo vpsadmin
+```
 
 ### SSH Setup
 In `/etc/ssh/sshd_config`:
@@ -18,7 +23,7 @@ AllowUsers vpsadmin
 
 Use Keys for Auth with passphrase and name for key:
 
-```
+```bash
 ssh-keygen -N 'securepassphrase' -t ed25519 -C 'mycomputer'
 chmod 0600 /home/vpsadmin/.ssh/authorized_keys
 ```
@@ -35,13 +40,13 @@ Host 1.1.1.1
 Remove `AcceptEnv LANG LC_*` to silence perl LC warnings
 
 ### Firewall Setup
-```
+```bash
 ufw allow 62222/tcp
 ufw enable
 ```
 
 ### Setup Hostname
-```
+```bash
 hostnamectl set-hostname newhostname
 ```
 In `/etc/hosts`:
@@ -49,13 +54,13 @@ In `/etc/hosts`:
 127.0.1.1 newhostname
 ```
 
-### Change shell
-```
+### Change Shell
+```bash
 apt install zsh
 chsh -s $(which zsh)
 ```
 Install omz:
-```
+```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 set theme in `.zshrc`:
@@ -63,5 +68,5 @@ set theme in `.zshrc`:
 ZSH_THEME=bira
 ```
 
-### Packages
-```git```
+### Install Essential Packages
+```git zellij```

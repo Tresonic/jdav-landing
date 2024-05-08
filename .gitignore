@@ -1,0 +1,7 @@
+__pycache__
+env
+.nox
+.vscode
+docs/
+build/
+tailwindcss

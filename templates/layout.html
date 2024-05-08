@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Luis Lang">
+  <link rel="shortcut icon" href="https://luislang.de/favicon.ico">
+
+  <title>{% block title %}Blog{% endblock %} - Luis L</title>
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="/static/bootstrap.min.css" rel="stylesheet"> -->
+
+  <!-- Custom styles for this template -->
+  <link href="/static/style.css" rel="stylesheet">
+
+  <!-- Syntax highlighting css -->
+  <link href="/static/pygments.css" rel="stylesheet">
+
+  {% block meta %}{% endblock %}
+</head>
+<body>
+  <div class="container">
+
+    {% block content %}{% endblock %}
+
+    <footer>
+        <img class="img-me" src="/static/duck.png">
+        <div class="col-md info">
+          <span class="name">&copy; 2024 - Luis L</span><br>
+          <a href="https://lubla.de"><i class="fa fa-link" aria-hidden="true"></i> lubla.de</a>
+          · <a href="https://github.com/tresonic" rel="noopener"><i class="fab fa-github" aria-hidden="true"></i> tresonic</a>
+          <!-- · <a href="https://twitter.com/theavalkyrie" rel="noopener"><i class="fab fa-twitter" aria-hidden="true"></i> theavalkyrie</a> -->
+          <br>
+        </div>
+    </footer>
+  </div>
+
+  <!-- webfonts & icons-->
+  <link href="/static/fontawesome/all.min.css" rel="stylesheet">
+</body>
+</html>
